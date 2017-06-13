@@ -1,0 +1,38 @@
+.content {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 300px;
+    text-align: center;
+    background: rgba(255,255,255,0.2);
+}
+
+.content .inner {
+    padding:20px;
+}
+
+.content h1, .content h2, .content .inner {
+    margin: 0;
+}
+
+.content h1 {
+    font-size: 3em;
+}
+
+.content h2 {
+    background: #2dace3;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.content a {
+    padding: 8px;
+    border: 2px solid white;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    text-decoration: none;
+}
+
+.content hr {
+    margin-bottom: 20px;
+}
