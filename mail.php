@@ -86,8 +86,7 @@ $mail->Body = 'Mensaje de: ' . $_POST['email'] . '<br/>' .  'Mensaje recibido: '
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    echo "Se te Esta redirigiendo de Regreso ¡Saludos!";
+    echo $resultado;
 }
 
-header("refresh: 3; url = ./");
 

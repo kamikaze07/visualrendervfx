@@ -75,6 +75,24 @@
 
 	</style>
 
+	<!--mail ajax script-->
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script>
+		function enviaMail(valorName, valorMail, valorPhone, valorMessage){
+        var parametros = { "name" : valorName,"email" : valorMail, "phone" : valorPhone, "message" : valorMessage };
+        $.ajax({
+                data:  parametros,
+                url:   'mail.php',
+                type:  'post',
+                beforeSend: function () {
+                        $("#resultado").html("Procesando, espere por favor...");
+                },
+                success:  function (response) {
+                        $("#resultado").html("Mensaje Enviado");
+                }
+        });
+}
+	</script>
 
 	</head>
 	<body>
@@ -518,7 +536,6 @@
 
 				<div class="col-md-6 to-animate">
 					<h3>Contacto</h3>
-				<form action="mail.php" method="post">	
 					<div class="form-group ">
 						<label for="name" class="sr-only">Name</label>
 						<input id="name" name="name" class="form-control" placeholder="Nombre" type="text">
@@ -534,11 +551,11 @@
 					<div class="form-group ">
 						<label for="message" class="sr-only">Message</label>
 						<textarea id="message" name="message" cols="30" rows="5" class="form-control" placeholder="Mensaje"></textarea>
+						<div id="resultado" color:#000; ></div>
 					</div>
 					<div class="form-group ">
-						<input class="btn btn-primary btn-lg" value="Enviar Mensaje" type="submit">
+						<input class="btn btn-primary btn-lg" href="javascript:;" onclick="enviaMail($('#name').val(), $('#email').val(), $('#phone').val(), $('#message').val());return false;" value="Enviar Mensaje" type="button">
 					</div>
-				</form>
 					</div>
 				</div>
 
