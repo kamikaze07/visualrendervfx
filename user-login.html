@@ -46,15 +46,12 @@
                 },
                 success:  function (response) {
                         $("#resultado").html(response);
+                      var input = document.getElementById('password');
+                      input.value = "";
+                      input.focus();
                 }
         });
 }
-
-$(document).ready(function() {
-        $(".input").on("focus click", function(){
-            $(this).val("");
-        });
-    });
 	</script>
 
 </head>
